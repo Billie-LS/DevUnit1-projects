@@ -9,4 +9,6 @@
    multi-line
    comments. */
 
-   console.log("Comments make your code more readable by others.");
+   console.log("comments make code more readable...be kind to others");
+
+   console.log("testing comments")
