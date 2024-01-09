@@ -1,0 +1,1 @@
+/Users/lokiskylizard/Desktop/DevExercises/DevUnit1-projects/data-and-variables/exercises/space_mission/target/debug/space_mission: /Users/lokiskylizard/Desktop/DevExercises/DevUnit1-projects/data-and-variables/exercises/space_mission/src/main.rs
