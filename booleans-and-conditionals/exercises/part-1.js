@@ -1,5 +1,12 @@
 // Declare and initialize the variables for exercise 1 here:
 
+let engineIndicatorLight = 'red blinking';
+let spaceSuitsOn = true;
+shuttleCabinReady = true;
+crewStatus = (spaceSuitsOn && shuttleCabinReady);
+computerStatusCode = 200
+shuttleSpeed = 15000;
+
 // BEFORE running the code, predict what will be printed to the console by the following statements:
 
 if (engineIndicatorLight === "green") {
