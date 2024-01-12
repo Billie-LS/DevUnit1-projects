@@ -18,27 +18,48 @@ let preparedForLiftOff = true; // boolean indicating 'go' or 'no-go'
 
 // conditional logic to verify astronautCount for shuttle does not exceed 7
 if (astronautCount<= 7); {
-
 }
+
+/* 
+Conditional (ternary operator)
+(astronautCount<= 7) ? <expressionIfTrue> : <expressionIfFalse> ;
+*/
 
 // conditional logic to verify astronautStatus is 'ready'
 if (astronautStatus === 'ready');{
-
 }
+
+/* 
+Conditional (ternary operator)
+(astronautStatus === 'ready') ? <expressionIfTrue> : <expressionIfFalse> ;
+*/
 
 // conditional logic to verify fuel temperature is in the required range i.e. between -150 and -300
 if (fuelTempCelsius >= -300 && fuelTempCelsius <= -150); {
-
 }
+
+/* 
+Conditional (ternary operator)
+(fuelTempCelsius >= -300 && fuelTempCelsius <= -150) ? <expressionIfTrue> : <expressionIfFalse> ;
+*/
 
 // conditional logic to verify fuelLevel is at 100%
 if (fuelLevel === '100%');{
-
 }
+
+/* 
+Conditional (ternary operator)
+(fuelLevel === '100%') ? <expressionIfTrue> : <expressionIfFalse> ;
+*/
 
 // conditional logic to verify weatherStatus is 'clear'
 if (weatherStatus === 'clear');{
 }
+
+/* 
+Conditional (ternary operator)
+(weatherStatus === 'clear') ? <expressionIfTrue> : <expressionIfFalse> ;
+*/
 
 // Confirm shuttle launch may safely proceed per above conditions
 
@@ -67,6 +88,22 @@ if (astronautCount <= 7) {  // verify astronautCount does not exceed 7
     console.log(`time: ${time}`);
     console.log('Terminate count down.  \nConditions for safe mission have not been achieved!');
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 JavaScript template literals, add 'unicode characters' like degree symbol-
