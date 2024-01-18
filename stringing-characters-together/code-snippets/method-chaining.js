@@ -59,3 +59,12 @@ console.log(fullWord);
 
 const degreeSymbol = String.fromCharCode(0x00B0);  //  0x00B0 is hexadecimal of the Unicode value for the degree symbol.
 console.log(degreeSymbol); // Output: °
+
+let string = 'CoffeeBeans'
+let stringTwo = string.charAt(0);    // declare and initialize variable stringTwo
+console.log(stringTwo);  // C
+console.log(`index 7 of stringTwo is ${stringTwo.charAt(7)}`); //  index 7 of stringTwo is nothing
+let stringThree = stringTwo.charAt(7);  // declare and initialize variable stringThree
+console.log(`stringThree is ${stringThree}`);  // stringThree is nothing
+console.log(`datatype of stringThree is ${typeof(stringThree)}`); //  datatype of stringThree is string 
+console.log(stringThree === ""); //  true  // therefore stringThree is empty, i.e. ""
