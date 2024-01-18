@@ -31,10 +31,28 @@ language.replace('Java', language.charAt(0)).replace('Script', language.charAt(4
 //1. Use the string methods you know to print 'Title Case' from the string 'title case'.
 
 let notTitleCase = 'title case';
-let titleCase = notTitleCase.replace('t', 'T').replace('c', 'C');
+console.log(notTitleCase);
+
+let titleCase = notTitleCase.replace('t', 'T').replace('c', 'C');  // solution one
 console.log(titleCase);
 
-console.log(notTitleCase);
-let titleCaseA = notTitleCase.replace('t','T') + notTitleCase.replace('c','C');
-console.log(titleCaseA);
 
+let notTitleCaseB = 'title case';
+let notTitleCaseC = 'title case';
+/*
+Split string into an array of words, capitalize first letter each word, and join back into a string
+.split(' ') splits string into array of words.
+.map() applies a function to each word, capitalizing the first letter.
+.join(' ') joins the modified words into a string.
+*/
+notTitleCaseArray = notTitleCaseB.split(' ');  // .split(' ') splits string to array of words.
+console.log(notTitleCaseArray);  // [ 'title', 'case' ]
+console.log(notTitleCaseArray.map(word => word.charAt(0).toUpperCase()));  // 'Maps over' each word in  array, capitalizes first letters using charAt(0).toUpperCase()
+// [ 'T', 'C' ]
+console.log(notTitleCaseArray);  // [ 'title', 'case' ]
+
+let titleCaseB = notTitleCaseB.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+console.log(titleCaseB);  // Output: Title Case
+
+let titleCaseC = notTitleCaseC.split(' ').map(word => word.charAt(0).toUpperCase().concat(word.slice(1))).join(' ');
+console.log(titleCaseC);  // Output: Title Case
