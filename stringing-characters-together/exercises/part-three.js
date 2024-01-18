@@ -12,8 +12,8 @@ console.log(`one ${language.replace('JavaScript','JS')}`);
 console.log(`two ${language1a = language.charAt(0) + language.charAt(4)}`);
 console.log(`three ${language1b = language.charAt(0).concat(language.charAt(4))}`);
 
-console.log(`four ${language1c = language.substring(0, 1) + language.substring(4, 5)}`);
-console.log(`five ${language1d = language.substring(0, 1).concat(language.substring(4, 5))}`);
+console.log(`four ${language2a = language.substring(0, 1) + language.substring(4, 5)}`);
+console.log(`five ${language2b = language.substring(0, 1).concat(language.substring(4, 5))}`);
 
 let initials = language.replace('Java', language.charAt(0)).replace('Script', language.charAt(4)); 
 console.log(initials);
