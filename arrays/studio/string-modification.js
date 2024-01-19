@@ -5,8 +5,8 @@ let str = "LaunchCode";
 
 //1) Use string methods to remove the first three characters from the string and add them to the end.
 //Hint - define another variable to hold the new string or reassign the new string to str.
-strV = str.slice(3) + 'Lau'; 
-console.log(str);  // nchCodeLau
+strV = str.slice(3) + ('Lau'); 
+console.log(strV);  // nchCodeLau
 
 // strV = str.slice(3).concat('Lau');
 // console.log(str);    // nchCodeLau
@@ -30,12 +30,39 @@ Sliced and diced is: ${strV}.`);
 
 //2) Modify your code to accept user input. Query the user to enter the number of letters that will be relocated.
 // a. using readline-sync
-let sliceCount = Number(input.question('Enter number of letters to relocate from beginning to end: '));
-console.log(typeof(sliceCount));
+// let sliceCount = Number(input.question('Enter number of letters to relocate from beginning to end: '));
+// console.log(typeof(sliceCount));
 str = "LaunchCode";
+// console.log(str.length); // 10
 
 // b. using prompt-sync
-let userPromptInput = Number(prompt('Enter number of letters to relocate from beginning to end: '));
-console.log(typeof(userPromptInput));
+// let userPromptInput = Number(prompt('Enter number of letters to relocate from beginning to end: '));
+// console.log(typeof(userPromptInput));
 
-//3) Add validation to your code to deal with user inputs that are longer than the word. In such cases, default to moving 3 characters. Also, the template literal should note the error.
+str = "LaunchCode";
+
+//3) Add validation to your code to deal with user inputs that are longer than the word. 
+// In such cases, default to moving 3 characters. Also, the template literal should note the error.
+let sliceCount = Number(input.question('Enter number of letters to relocate from beginning to end: '));
+
+if (sliceCount >= 0 && sliceCount <= str.length-1) {
+    // Remove the first 'sliceCount' characters from the beginning and add them to the end.
+    str =  str.slice(0, sliceCount) + str.slice(sliceCount);
+    console.log(str);
+} else {
+    // Default to moving 3 characters.
+    str = str.slice(3).concat('Lau');
+    console.log(`Error: Invalid input. Moving 3 characters. Modified string is: ${str}`);
+}
+
+// // alternate approach of classmate guided by Instructor Phillip 
+// if (sliceCount >= 0 && sliceCount <= str.length-1){
+//     let firstSlice = str.slice(0, sliceCount);
+//     let tailSlice = str.slice(sliceCount);
+//     console.log(tailSlice.concat(firstSlice));
+// } else {
+//     sliceCount = 3;  // Default to moving first 3 characters
+//     let firstSlice = str.slice(0, sliceCount);
+//     let tailSlice = str.slice(sliceCount);
+//     console.log(`Error: Invalid input. Moving 3 characters. Modified string is: ${tailSlice+firstSlice}`);
+// }
