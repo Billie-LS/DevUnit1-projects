@@ -1,3 +1,4 @@
+// FOR LOOP
 /*
 Generic for loop syntax
 Initialization: Declare a variable and initialize it with a starting value.
@@ -52,3 +53,9 @@ for (let i = 0; i < 51; i++) {
 // 2
 // ...
 // 50
+
+let name = "LaunchCode";
+
+for (let i = 0; i < name.length; i++) {
+   console.log(name[i]);
+}
