@@ -45,9 +45,9 @@ str = "LaunchCode";
 // In such cases, default to moving 3 characters. Also, the template literal should note the error.
 let sliceCount = Number(input.question('Enter number of letters to relocate from beginning to end: '));
 
-if (sliceCount >= 0 && sliceCount <= str.length-1) {
+if (sliceCount >= 0 && sliceCount < str.length) {
     // Remove the first 'sliceCount' characters from the beginning and add them to the end.
-    str =  str.slice(0, sliceCount) + str.slice(sliceCount);
+    str =   str.slice(sliceCount) + str.slice(0, sliceCount);
     console.log(str);
 } else {
     // Default to moving 3 characters.
@@ -56,7 +56,7 @@ if (sliceCount >= 0 && sliceCount <= str.length-1) {
 }
 
 // // alternate approach of classmate guided by Instructor Phillip 
-// if (sliceCount >= 0 && sliceCount <= str.length-1){
+// if (sliceCount >= 0 && sliceCount < str.length){
 //     let firstSlice = str.slice(0, sliceCount);
 //     let tailSlice = str.slice(sliceCount);
 //     console.log(tailSlice.concat(firstSlice));
