@@ -78,8 +78,9 @@ if (userPromptInput >= 0 && userPromptInput < str.length) {
 }
 
 
+str = "LaunchCode";
 
-// // alternate approach of classmate guided by Instructor Phillip 
+// alternate approach of classmate guided by Instructor Phillip 
 // if (sliceCount >= 0 && sliceCount < str.length){
 //     let firstSlice = str.slice(0, sliceCount);
 //     let tailSlice = str.slice(sliceCount);
