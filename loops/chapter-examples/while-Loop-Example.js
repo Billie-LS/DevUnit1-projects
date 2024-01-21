@@ -22,3 +22,14 @@ while (num <= 0) {  // conditional expression
   num = input.question('Invalid input. Please enter a positive number:');  // loop body : prompts for positive number
   num = Number(num);  // preprocessing type conversion and iteration step
 }
+
+// correct infinite loop
+let n = 10;
+let answer = 1;
+
+while (n > 0 && n < 11) {
+  answer = answer + n;
+  n = n + 1;
+}
+
+console.log(answer);
