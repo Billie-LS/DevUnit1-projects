@@ -43,10 +43,61 @@ while (numAstronauts <3 || numAstronauts >7 || isNaN(numAstronauts)) {
 }  
   
 
-//c. Use a final loop to monitor the fuel status and the altitude of the shuttle. Each iteration, decrease the fuel level by 100 units for each astronaut aboard. Also, increase the altitude by 50 kilometers.
-
-
+//c. Use a final loop to monitor the fuel status and the altitude of the shuttle. 
+// Each iteration, decrease the fuel level by 100 units for each astronaut aboard. 
+// Also, increase the altitude by 50 kilometers.
+while (fuelLevel - 100 * numAstronauts > 0) {
+  fuelLevel -= 100;
+  altitude += 50;
+  console.log(`current fuel level is : ${fuelLevel} pounds`);
+  console.log(`current altitude is : ${altitude} km`); 
+}  
+console.log(`The shuttle gained an altitude of ${altitude} km.`); 
 
 /*Exercise #5: Output the result with the phrase, “The shuttle gained an altitude of ___ km.”
 
 If the altitude is 2000 km or higher, add “Orbit achieved!” Otherwise add, “Failed to reach orbit.”*/
+// altitude = 1999;
+console.log(`The shuttle gained an altitude of ${altitude} km.`); 
+if (altitude >= 2000) {
+  console.log(`Orbit achieved!\n Maintaining altitude ${altitude} km.`);
+}else{
+  console.log(`Failed to reach orbit.\n Peak altitude ${altitude} km.`);
+}
+
+
+
+// a.
+while (true) {
+  fuelLevel = input.question('Please enter a positive number for fuel level: ');
+  fuelLevel = Number(fuelLevel);
+
+  if (Number.isInteger(fuelLevel) && fuelLevel > 5000 && fuelLevel < 30000) {
+    break;
+  } else {
+    console.log('Invalid input. Please enter a positive integer between 5000 and 30000.');
+  }
+}
+
+// b.
+while (!(numAstronauts >= 3 && numAstronauts <= 7)) {
+  numAstronauts = input.question("Enter the number of astronauts onboard (3-7): ");
+  numAstronauts = Number(numAstronauts);
+}
+
+// c.
+while (fuelLevel - 100 * numAstronauts > 0) {
+  fuelLevel -= 100;
+  altitude += 50;
+  console.log(`Current fuel level is: ${fuelLevel} pounds`);
+  console.log(`Current altitude is: ${altitude} km`); 
+}
+console.log(`The shuttle gained an altitude of ${altitude} km.`);
+
+// #5
+console.log(`The shuttle gained an altitude of ${altitude} km.`); 
+if (altitude >= 2000) {
+  console.log(`Orbit achieved!\nMaintaining altitude ${altitude} km.`);
+} else {
+  console.log(`Failed to reach orbit.\nPeak altitude ${altitude} km.`);
+}
