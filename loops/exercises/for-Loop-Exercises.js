@@ -70,19 +70,37 @@ console.log(reversed);
   a. One array contains the even numbers, and the other holds the odds.
   b. Print the arrays to confirm the results. */
 
+// Original array
 let arr = [2, 3, 13, 18, -5, 38, -10, 11, 0, 104];
-let arrEven = [];
-let arrOdd = [];
+let arrEven = []; // Array to store even numbers
+let arrOdd = [];  // Array to store odd numbers
 
+// Loop through the elements of array
 for (let i = 0; i < arr.length; i++) {
-  if (arr[i]%2===0){
+  // if the current element is even
+  if (arr[i] % 2 === 0) {
+    // even, push to even array
     arrEven.push(arr[i]);
-  }else{
-    arrOdd.push(arr[i]); 
-  } 
+  } else {
+    // odd, push to odd array
+    arrOdd.push(arr[i]);
+  }
 }
 
-console.log(`even array ${arrEven}`);
-console.log(arrEven);
-console.log(`odd array ${arrOdd}`);
-console.log(arrOdd);
+// Displaying the even and odd arrays
+console.log("Even array", arrEven);
+console.log("Odd array", arrOdd);
+
+
+// Original array
+let arr1 = [2, 3, 13, 18, -5, 38, -10, 11, 0, 104];
+
+// Using filter to generate array of the even numbers
+let arrEven1 = arr.filter(num => num % 2 === 0);
+
+// Using filter to generate array of the odd numbers
+let arrOdd1 = arr.filter(num => num % 2 !== 0);
+
+// Displaying the even and odd arrays
+console.log("Even array", arrEven1);
+console.log("Odd array", arrOdd1);
