@@ -101,3 +101,11 @@ if (altitude >= 2000) {
 } else {
   console.log(`Failed to reach orbit.\nPeak altitude ${altitude} km.`);
 }
+
+let output = `The shuttle gained an altitude of ${altitude} km.`;
+
+if (altitude >= 2000) {
+  output += "\nOrbit achieved!";
+}
+
+console.log(output);
