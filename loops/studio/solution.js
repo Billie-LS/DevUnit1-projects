@@ -10,24 +10,45 @@ let desserts = ['juice', 'milk', 'water', 'soy milk', 'soda', 'tea'];
 
 
 function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
-  let pantry = [protein, grains, veggies, beverages, desserts];
-  let meals = [];
+    // Original ingredients
+    let pantry = [protein, grains, veggies, beverages, desserts];
+    // Empty array to store assembled meals
+    let meals = [];
+    /// Part A #2: Write a ``for`` loop inside this function
+    /// Code your solution for part A #2 below this comment (and above the return statement) ... ///
+    
+    // Outer loop for the specified number of meals
+    for (let i = 0; i < numMeals; i++) {
+      // Empty array for a single meal
+      let meal = [];
   
-  /// Part A #2: Write a ``for`` loop inside this function
-  /// Code your solution for part A #2 below this comment (and above the return statement) ... ///
-
-
-  return meals;
-}
-
-
-function askForNumber() {
-  numMeals = input.question("How many meals would you like to make?");
+      // Inner loop to iterate through each category in the pantry
+      for (let j = 0; j < pantry.length; j++) {
+        // Get the current category
+        let category = pantry[j];
   
-  /// CODE YOUR SOLUTION TO PART B here ///
-
-  return numMeals;
-}
+        // Ensure that each ingredient is used only once
+        let ingredient;
+  
+        // If the category is not empty, pop an element; otherwise, shift from the original pantry
+        if (category.length > 0) {
+          ingredient = category.pop();
+        } else {
+          ingredient = pantry[j].shift();
+          pantry[j].push(ingredient);
+        }
+  
+        // Add the selected ingredient to the meal
+        meal.push(ingredient);
+      }
+  
+      // Add the assembled meal to the meals array
+      meals.push(meal);
+    }
+  
+    // Return the array of assembled meals
+    return meals;
+  }
 
 
 function generatePassword(string1, string2) {
