@@ -21,15 +21,15 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
     for (let i = 0; i < numMeals; i++) {
       // Empty array for a single meal
       let meal = [];
-  
+      
       // Inner loop to iterate through each category in the pantry
       for (let j = 0; j < pantry.length; j++) {
         // Get the current category
         let category = pantry[j];
-  
+        
         // Ensure that each ingredient is used only once
         let ingredient;
-  
+        
         // If the category is not empty, pop an element; otherwise, shift from the original pantry
         if (category.length > 0) {
           ingredient = category.pop();
@@ -37,15 +37,15 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
           ingredient = pantry[j].shift();
           pantry[j].push(ingredient);
         }
-  
+        
         // Add the selected ingredient to the meal
         meal.push(ingredient);
       }
-  
+      
       // Add the assembled meal to the meals array
       meals.push(meal);
     }
-  
+    
     // Return the array of assembled meals
     return meals;
   }
