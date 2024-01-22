@@ -50,10 +50,10 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
   }
   
 function askForNumber() {
-  numMeals = input.question("How many meals would you like to make?");
+  numMeals = Number(input.question("How many meals would you like to make?"));
   /// CODE YOUR SOLUTION TO PART B here, between this comment and return numMeals ///
   while (!(numMeals > 0 && numMeals <= 6 && Number.isInteger(numMeals))) {
-    numMeals = input.question("Please enter a valid number of meals between 1 and 6: ");
+    numMeals = Number(input.question("Please enter a valid number of meals between 1 and 6: "));
   }
   return numMeals;
   }
@@ -83,8 +83,8 @@ function runProgram() {
   /// UNCOMMENT the next two lines to test your ``askForNumber`` solution ///
   /// Tip - don't test this part until you're happy with your solution to part A #2 ///
   
-  // let mealsForX = mealAssembly(protein, grains, veggies, beverages, desserts, askForNumber());
-  // console.log(mealsForX);
+  let mealsForX = mealAssembly(protein, grains, veggies, beverages, desserts, askForNumber());
+  console.log(mealsForX);
   
     /// TEST PART C HERE ///
   /// UNCOMMENT the remaining commented lines and change the password1 and password2 strings to ensure your code is doing its job ///
