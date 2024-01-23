@@ -16,34 +16,42 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
     /// Part A #2: Write a ``for`` loop inside this function
     /// Code your solution for part A #2 below this comment (and above the return statement) ... ///
     
-    // Outer loop for the specified number of meals
     for (let i = 0; i < numMeals; i++) {
-      // Empty array for a single meal
       let meal = [];
-      
-      // Inner loop to iterate through each category in the pantry
       for (let j = 0; j < pantry.length; j++) {
-        // Get the current category
-        let category = pantry[j];
-        
-        // Ensure that each ingredient is used only once
-        let ingredient = '';
-        
-        // If the category is not empty, pop an element; otherwise, shift from the original pantry
-        if (category.length > 0) {
-          ingredient = category.pop();
-        } else {
-          ingredient = pantry[j].shift();
-          pantry[j].push(ingredient);
-        }
-        
-        // Add the selected ingredient to the meal
-        meal.push(ingredient);
+        meal.push(pantry[j][i]);
       }
-      
-      // Add the assembled meal to the meals array
       meals.push(meal);
     }
+    
+    // // Outer loop for the specified number of meals
+    // for (let i = 0; i < numMeals; i++) {
+    //   // Empty array for a single meal
+    //   let meal = [];
+      
+    //   // Inner loop to iterate through each category in the pantry
+    //   for (let j = 0; j < pantry.length; j++) {
+    //     // Get the current category
+    //     let category = pantry[j];
+        
+    //     // Ensure that each ingredient is used only once
+    //     let ingredient = '';
+        
+    //     // If the category is not empty, pop an element; otherwise, shift from the original pantry
+    //     if (category.length > 0) {
+    //       ingredient = category.pop();
+    //     } else {
+    //       ingredient = pantry[j].shift();
+    //       pantry[j].push(ingredient);
+    //     }
+        
+    //     // Add the selected ingredient to the meal
+    //     meal.push(ingredient);
+    //   }
+      
+    //   // Add the assembled meal to the meals array
+    //   meals.push(meal);
+    // }
     
     // Return the array of assembled meals
     return meals;
@@ -52,9 +60,11 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
 function askForNumber() {
   numMeals = Number(input.question("How many meals would you like to make?"));
   /// CODE YOUR SOLUTION TO PART B here, between this comment and return numMeals ///
-  // while (numMeals = 0 || numMeals > 6 || isNaN(numMeals)) {
-  while (!(numMeals > 0 && numMeals <= 6 && Number.isInteger(numMeals))) {
-    numMeals = Number(input.question("Please enter a valid number of meals between 1 and 6: "));
+
+  while (numMeals <= 0 || numMeals > 6 || isNaN(numMeals)) {
+  // while (!(numMeals > 0 && numMeals <= 6 && Number.isInteger(numMeals))) {
+    
+  numMeals = Number(input.question("Please enter a valid number of meals between 1 and 6: "));
   }
   return numMeals;
   }
