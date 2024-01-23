@@ -15,12 +15,17 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
     let meals = [];
     /// Part A #2: Write a ``for`` loop inside this function
     /// Code your solution for part A #2 below this comment (and above the return statement) ... ///
-    
+
+    // Iterate through each meal
     for (let i = 0; i < numMeals; i++) {
+      // Empty array for a single meal being assembled
       let meal = [];
+      // Inner loop to iterate through each category in the pantry
       for (let j = 0; j < pantry.length; j++) {
+        // Add the ingredient from the current category to the meal
         meal.push(pantry[j][i]);
       }
+      // Add the assembled meal to the meals array
       meals.push(meal);
     }
     
