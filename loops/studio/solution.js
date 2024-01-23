@@ -52,7 +52,8 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
 function askForNumber() {
   numMeals = Number(input.question("How many meals would you like to make?"));
   /// CODE YOUR SOLUTION TO PART B here, between this comment and return numMeals ///
-  while (!(numMeals > 0 && numMeals <= 6 && Number.isInteger(numMeals))) {
+  while (numMeals <= 0 || numMeals >= 6 || isNaN(numMeals)) {
+  // while (!(numMeals > 0 && numMeals <= 6 && Number.isInteger(numMeals))) {
     numMeals = Number(input.question("Please enter a valid number of meals between 1 and 6: "));
   }
   return numMeals;
@@ -76,8 +77,8 @@ function runProgram() {
   /// Change the final input variable (aka numMeals) here to ensure your solution makes the right number of meals ///
   /// We've started with the number 2 for now. Does your solution still work if you change this value? ///
   
-  let meals = mealAssembly(protein, grains, veggies, beverages, desserts, 2);
-  console.log(meals);
+  // let meals = mealAssembly(protein, grains, veggies, beverages, desserts, 2);
+  // console.log(meals);
   
   /// TEST PART B HERE ///
   /// UNCOMMENT the next two lines to test your ``askForNumber`` solution ///
