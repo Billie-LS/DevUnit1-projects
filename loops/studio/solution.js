@@ -15,7 +15,7 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
     let meals = [];
     /// Part A #2: Write a ``for`` loop inside this function
     /// Code your solution for part A #2 below this comment (and above the return statement) ... ///
-
+    
     // Iterate through each meal
     for (let i = 0; i < numMeals; i++) {
       // Empty array for a single meal being assembled
