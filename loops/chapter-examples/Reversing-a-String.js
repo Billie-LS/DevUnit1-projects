@@ -19,3 +19,8 @@ for (let i = 0; i < numbers.length; i++) {
     total += numbers[i];  // total = total + numbers[i]
 }
 console.log(total);
+
+let color2 = 'brown'
+for (i = color2.length; i >= 0; i--) { 
+    console.log(color2[i]);
+}
