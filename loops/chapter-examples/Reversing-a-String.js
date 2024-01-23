@@ -21,6 +21,6 @@ for (let i = 0; i < numbers.length; i++) {
 console.log(total);
 
 let color2 = 'brown'
-for (i = color2.length; i >= 0; i--) { 
+for (let i = color2.length-1; i >= 0; i--) { 
     console.log(color2[i]);
 }

@@ -27,7 +27,7 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
         let category = pantry[j];
         
         // Ensure that each ingredient is used only once
-        let ingredient;
+        let ingredient = '';
         
         // If the category is not empty, pop an element; otherwise, shift from the original pantry
         if (category.length > 0) {
