@@ -52,8 +52,8 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
 function askForNumber() {
   numMeals = Number(input.question("How many meals would you like to make?"));
   /// CODE YOUR SOLUTION TO PART B here, between this comment and return numMeals ///
-  while (numMeals <= 0 || numMeals >= 6 || isNaN(numMeals)) {
-  // while (!(numMeals > 0 && numMeals <= 6 && Number.isInteger(numMeals))) {
+  // while (numMeals = 0 || numMeals > 6 || isNaN(numMeals)) {
+  while (!(numMeals > 0 && numMeals <= 6 && Number.isInteger(numMeals))) {
     numMeals = Number(input.question("Please enter a valid number of meals between 1 and 6: "));
   }
   return numMeals;
