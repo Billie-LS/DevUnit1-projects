@@ -21,7 +21,7 @@ for (let i = 0; i < names.length; i++) {
 }
 
 /*
-function, printNames, accepts takes array of names as argument and 
+function, printNames, takes array of names as argument and 
 prints each name to the console using a for-loop. It encapsulates 
 the logic for printing names, enabling reuse of functionality by 
 invoking function with different name arrays
@@ -35,5 +35,4 @@ function printNames(names) {
         // Print the current element in the 'names' array at index 'i' to the console.
         console.log(names[i]);
     }
-
-
+}
