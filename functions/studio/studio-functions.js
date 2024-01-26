@@ -27,10 +27,9 @@ function reverseCharacters(stringToReverse) {
     if (typeof stringToReverse === 'string') {
     return stringToReverse.split('').reverse().join('');
 }else{
-    return Number(stringToReverse.tostring().reverse().join(''));
+    return Number(stringToReverse.tostring().split().reverse().join(''));
 }
 }
-
 
 // Part Three: Complete Reversal
 
@@ -45,8 +44,10 @@ let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
 
-let emptyArr = [];
-for (let i = 0; i <= arrayTest1.length; i++) {
+// 1. Define and initialize an empty array.
+let emptyArr = []; 
+// 2. Loop through the old array.
+for (let i = 0; i < arrayTest1.length; i++) { 
     emptyArr.push(reverseCharacters[i]);
 }
 
