@@ -18,7 +18,6 @@ let firstInitials1b = names.map(firstLetter1b);
 console.log(firstInitials1b);
 
 
-
 // TODO: Write a mapping function
 let firstLetter2a = function (names) {
     return names.charAt(0);
