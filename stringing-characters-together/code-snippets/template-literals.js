@@ -19,3 +19,13 @@ All-where.
 – Sri Chinmoy`;
 
 console.log(poem);
+
+// test knowledge mad-libs style
+
+let pluralNoun = 'cats';
+let name = 'zack';
+let verb = 'chop';
+let adjective = 'creamy';
+let color = 'pink';
+
+console.log("JavaScript provides a "+ color +" collection of tools — including " + adjective + " syntax and " + pluralNoun + " — that allows "+ name +" to "+ verb +" with strings.")
