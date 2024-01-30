@@ -8,7 +8,22 @@ function findMinValue(arr){
   return min;
 }
 
-//Create a function with an array of numbers as its parameter. This function will return a new array with the numbers sorted from least to greatest value.
+
+function findMinValueRecursive(arr, index = 0) {
+  if (index === arr.length) {
+      // Base case: when index reaches the end of the array
+      return undefined; // Return undefined for an empty array
+  }
+
+  // Recursive case: find the minimum value in the rest of the array
+  const minValueRest = findMinValueRecursive(arr, index + 1);
+
+  // Compare the current element with the minimum value in the rest of the array
+  return (minValueRest === undefined || arr[index] < minValueRest) ? arr[index] : minValueRest;
+}
+
+//Create a function with an array of numbers as its parameter. 
+// This function will return a new array with the numbers sorted from least to greatest value.
 
 /*Within the function:
 1) Define a new, empty array to hold the final sorted numbers.
@@ -19,11 +34,41 @@ function findMinValue(arr){
 6) Be sure to print the results in order to verify your code.*/
 
 //Your function here...
+function sortArray(arr) {
+  let newArray = [];
+
+  // Repeat until old array empty
+  while (arr.length > 0) {
+    // Find minimum value in old array
+    let minValue = findMinValue(arr);
+
+    // Add the minimum value to new array
+    newArray.push(minValue);
+
+    // Remove minimum value from old array
+    arr.splice(arr.indexOf(minValue), 1);
+  }
+
+  return newArray;
+}
+
 
 /* BONUS MISSION: Refactor your sorting function to use recursion below:
  */
+
+function sortArrayRecursive(arr) {
+  return arr.length === 0 ? [] : [findMinValue(arr)].concat(sortArray(arr.filter(num => num !== findMinValue(arr))));
+}
 
 //Sample arrays for testing:
 let nums1 = [5, 10, 2, 42];
 let nums2 = [-2, 0, -10, -44, 5, 3, 0, 3];
 let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
+
+// console.log(sortArray(nums1));
+// console.log(sortArray(nums2));
+// console.log(sortArray(nums3));
+
+console.log(sortArrayRecursive(nums1));
+console.log(sortArrayRecursive(nums2));
+console.log(sortArrayRecursive(nums3));
