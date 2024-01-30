@@ -1,6 +1,6 @@
 // the built-in object console
 // using typeof operator to determine the data type of console
-console.log(typeof console);
+console.log(typeof console);  // object
 
 // Every string has a length property, which is an integer.
 let firstName = "Grace";
