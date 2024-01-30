@@ -2,8 +2,11 @@
 let nonprofit = "Launchcode";
 
 console.log(nonprofit);
-nonprofit[6] = "C";  // attempt to change c character to C character
-console.log(nonprofit);  // will not change, string immutable
+// attempt to change c character to C character
+nonprofit[6] = "C";
+// JavaScript ignores request to alter a string, no error message given
+
+console.log(nonprofit);  // Launchcode ; no change, string immutable
 
 // Not changing string, rather re-assign value of a variable
 nonprofit = "LaunchCode";
