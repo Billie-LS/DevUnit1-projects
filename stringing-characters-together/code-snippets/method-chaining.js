@@ -3,6 +3,7 @@
 let word = 'JavaScript';
 // stringName.toUpperCase()
 console.log(word.toUpperCase()); //Returns ``JAVASCRIPT``
+console.log(word.toLowerCase()); //Returns ``javascript``
 
 // stringName.slice(i)
 console.log(word.slice(4));  // returns Script
