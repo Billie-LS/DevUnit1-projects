@@ -20,6 +20,7 @@ console.log("The at character \u0040");
 // escaping a character
 console.log("\"The dog's favorite toy is a stuffed hedgehog,\" said Chris");
 
+
 // testing knowledge
 console.log('Launch\nCode');
 console.log('\nLaunch\nCode');
