@@ -3,8 +3,17 @@ let jsCreator = "Brendan Eich";
 console.log(jsCreator[-1]);
 console.log(jsCreator[42]);
 
-// phrase = 'Code for fun'
-// console.log(phrase[2])
+let phrase = 'Code for fun'
+console.log(phrase[2])
+
+let firstInitial = jsCreator[0];
+let lastInitial = jsCreator[8];
+
+let outputStr = "JavaScript was created by somebody with initials " +
+firstInitial + "." +
+lastInitial + ".";
+
+console.log(outputStr);
 
 myStr = 'Index'
 myStr[2] === 'n'; // false
@@ -16,5 +25,5 @@ console.log(myStr[6] === ' ')
 myStr[0] === 'I';  // true
 console.log(myStr[0] === 'I')
 
-let phrase = "JavaScript rocks!";
+phrase = "JavaScript rocks!";
 console.log(phrase[phrase.length - 8]);  // length=17, 17-8 = 9, index 9 = t 
