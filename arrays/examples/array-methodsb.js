@@ -20,6 +20,6 @@ console.log(strArr); // [ 'LaunchCode', 'students', 'rock!' ]
 let groceryBag = ['bananas', 'apples', 'edamame', 'chips', 'cucumbers', 'milk', 'cheese'];
 let selectedItems = [];
 
-selectedItems = groceryBag.slice(2, 5).sort();  ['chips', 'cucumbers', 'edamame',]
+selectedItems = groceryBag.slice(2, 5).sort();  [ 'chips', 'cucumbers', 'edamame' ]
 console.log(selectedItems);
 
