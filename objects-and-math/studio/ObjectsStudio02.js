@@ -1,13 +1,90 @@
-// Code your orbitCircumference function here:
+// TODO: Code your orbitCircumference function here (note- circumference = orbit):  
+
+let idNumbers = [291, 414, 503, 599, 796, 890];
+
+// function orbitCircumference takes parameter radius
+function orbitCircumference(radius) {
+  // Calculate circumference formula C = 2πr and round to nearest integer
+  const circumference = Math.round(2 * Math.PI * radius);
+
+  // Return circumference integer
+  return circumference;
+}
+
+console.log(orbitCircumference(2000));
+
+// variable orbitRadius initialize to 2000 (in km)
+const orbitRadius = 2000;
+
+// Call orbitCircumference with orbitRadius as argument
+const orbitCircumferenceValue = orbitCircumference(orbitRadius);
 
 
-// Code your missionDuration function here:
+// TODO: Code missionDuration function to take three parameters - number orbits completed, orbit radius, and orbital speed. 
+// Set default radius to 2000 km and default orbital speed to 28000 km/hr.
+function missionDuration(orbitsComplete, orbitRadius, orbitSpeed){
+  // Set default values orbitRadius and orbitSpeed
+  orbitRadius = orbitRadius || 2000;
+  orbitSpeed = orbitSpeed || 28000;
+
+  const distance = orbitsComplete * orbitCircumferenceValue;
+  // const distance = orbitsComplete * orbitCircumference(radius);
+  const duration = Number((distance / orbitSpeed).toFixed(2));
+  return duration;
+}
+
+console.log(missionDuration(5))
+
+// TODO: print, 'The mission will travel ____ km around the planet, and it will take ____ hours to complete.'
+
+console.log(`The mission will travel ${orbitCircumferenceValue * 5} km around the planet, and it will take ${missionDuration(5)} hours to complete.`) 
 
 
-// Copy/paste your selectRandomEntry function here:
+
+// TODO: Copy/paste your selectRandomEntry function here:
+// function selectRandomEntry takes candidates as parameter
+function selectRandomEntry(candidates) {
+  
+  if (candidates.length === 0) {
+    console.error('Error: No candidates provided.');
+    return null;
+  }
+
+  // Get random index between 0 and < idNumbers array length
+  const randomIndex = Math.floor(Math.random() * idNumbers.length);
+
+  // Get random ID number from idNumbers array using random index
+  const randomIdNumber = idNumbers[randomIndex];
+
+  // Find candidate in candidates array with selected ID number
+  const selectedCandidate = candidates.find(candidate => candidate.astronautID === randomIdNumber);
+
+  // Return selected candidate
+  return selectedCandidate;
+}
 
 
-// Code your oxygenExpended function here:
+// TODO: Code your oxygenExpended function here, function takes candidate object NOT crew array:
+
+function oxygenExpended(selectedCandidate){
+  spaceWalkTime = missionDuration(3);
+
+}
+
+// TODO: Code your oxygenExpended function here, function takes candidate object NOT crew array:
+function oxygenExpended(selectedCandidate) {
+  // Use missionDuration to calculate spacewalk time (3 orbits)
+  const spaceWalkTime = missionDuration(3);
+
+  // Use candidate's o2Used method to calculate oxygen consumption during the spacewalk
+  const oxygenConsumed = selectedCandidate.o2Used(spaceWalkTime);
+
+  // Round the result to 3 decimal places
+  const roundedOxygenConsumed = Number(oxygenConsumed.toFixed(3));
+
+  // Display the results
+  console.log(`${selectedCandidate.name} will expend ${roundedOxygenConsumed} units of oxygen during the spacewalk.`);
+}
 
 
 // Candidate data & crew array.
@@ -54,5 +131,7 @@ let candidateA = {
    'astronautID':890
  };
  
- let crew = [candidateA,candidateC,candidateE];
- 
+let crew = [candidateA,candidateC,candidateE];
+
+const randomCrewMember = selectRandomEntry(crew);
+oxygenExpended(randomCrewMember);
