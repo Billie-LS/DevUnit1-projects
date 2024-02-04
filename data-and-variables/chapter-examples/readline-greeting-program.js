@@ -1,5 +1,5 @@
 // const input = require('readline-sync');
-
+const input = require('readline-sync');
 // let name = input.question("Enter your name: ");
 
 const inputQuestion1 = require('readline-sync');
