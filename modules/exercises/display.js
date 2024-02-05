@@ -34,3 +34,7 @@ function printTestScores(index,test,students,scores){
   }
   return;
 }
+
+// TODO: add code to export ONLY printAll as a function
+
+module.exports = printAll;
