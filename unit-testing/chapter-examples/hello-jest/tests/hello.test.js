@@ -2,7 +2,7 @@ const hello = require('../hello.js'); // Import hello.js module
 
 // Start test suite with description
 // Expecting the return value to be "Hello, World!"
-describe("hello", function(){ // parameters name of the function test and empty anonymous function
+describe("hello", function(){ // parameters name of function to test and empty anonymous function
 // describe("hello world test", function(){
 
       // Test hello function with specific name
