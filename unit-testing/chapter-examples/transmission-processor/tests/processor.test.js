@@ -70,4 +70,14 @@ describe("transmission processor", function() {
     expect(result.rawData).toBe(-1);
   });
 
+  test("returns -1 for rawData if < NOT at position 0", function() {
+    let result = processor("9<701::487297403495720912>");
+    expect(result.rawData).toBe(-1);
+  });
+
+  test("returns -1 for rawData if > NOT at position rawData.length-1", function() {
+    let result = processor("<9701::48729740349572091>2");
+    expect(result.rawData).toBe(-1);
+  });
+
 });
