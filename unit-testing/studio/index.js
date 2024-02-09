@@ -1,9 +1,11 @@
 let launchcode = {
-    organization:  "nonprofit",
+    organization: "nonprofit",
     executiveDirector: "Jeff",
-    percentageCoolEmployees, 100,
+    percentageCoolEmployees: 100,
     programsOffered: ["Web Development", "Data Analysis", "Liftoff"],
-    functionStuff: launchOutput()
-}
+    launchOutput: function() {
+        // Placeholder method, will be implemented later
+    }
+};
 
-module.exports = launchcode;
+module.exports = { launchcode };
