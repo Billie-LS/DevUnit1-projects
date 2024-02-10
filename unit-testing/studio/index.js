@@ -1,24 +1,24 @@
-let twoThree = {
+const twoThree = {
     divisors: [2, 3], 
     output: 'LaunchCode!' 
 };
 
-let twoFive = {
+const twoFive = {
     divisors: [2, 5], 
     output: 'Launch Rocks! (CRASH!!!!)' 
 };
 
-let two = {
+const two = {
     divisors: [2], 
     output: 'Launch!' 
 };
 
-let three = {
+const three = {
     divisors: [3], 
     output: 'Code!' 
 };
 
-let five = {
+const five = {
     divisors: [5], 
     output: 'Rocks!' 
 };
@@ -33,13 +33,13 @@ let launchcode = {
     
         let output = ''; // empty string to store output
     
-        // Iterate over each condition in the 'conditions' array
+        // iterate each condition in 'conditions' array
         for (let condition of conditions) {
             const { divisors, output: conditionOutput } = condition;
     
-            // Check if the number 'num' satisfies all divisors in the current condition
+            // check 'num' satisfies all divisors in current condition
             if (divisors.every(divisor => num % divisor === 0)) {
-                // Return the corresponding output and exit the loop
+                // return corresponding output, exit loop
                 return conditionOutput;
             }
         }
