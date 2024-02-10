@@ -14,36 +14,41 @@ let launchcode = {
         const conditions = {
             '2&3': 'LaunchCode!', // divisible by 2 and 3
             '2&5': 'Launch Rocks! (CRASH!!!!)', // divisible by 2 and 5
-            '2': 'Launch!', // divisible by 2 only
-            '3': 'Code!', // divisible by 3 only
-            '5': 'Rocks!', // divisible by 5 only
+            2: 'Launch!', // divisible by 2 only
+            3: 'Code!', // divisible by 3 only
+            5: 'Rocks!' // divisible by 5 only
         };
+
+        let output = ''; // empty string to store output
 
         // Check for specific conditions first
         if (num % 2 === 0 && num % 3 === 0) { // divisible by 2 and 3
             return conditions['2&3']; // Return 'LaunchCode!'
-        } else if (num % 2 === 0 && num % 5 === 0) { // divisible by 2 and 5
+        } 
+        if (num % 2 === 0 && num % 5 === 0) { // divisible by 2 and 5
             return conditions['2&5']; // Return 'Launch Rocks! (CRASH!!!!)'
         }
 
         // Check other conditions
-        let output = ''; // Initialize an empty string to store the output
         // Loop through each condition in the 'conditions' object
         for (let condition in conditions) {
-            // Split the condition string to extract divisors and convert them to numbers
+
+            // Split the condition string (i.e. the key) to extract divisors, convert to numbers
             const divisors = condition.split('&').map(Number);
+
             // Check if the number satisfies each condition by ensuring it's divisible by all divisors
             if (divisors.every(divisor => num % divisor === 0)) {
-                output += conditions[condition]; // Append the corresponding output to the output string
+
+                // Append corresponding output to output string
+                output += conditions[condition]; 
             }
         }
-
-        // Return the output if it's not empty; otherwise, return 'Bang!' as the default output
+        // Return the output if not empty; or default return 'Bang!'
         return output || 'Bang!';
     }
 };
 
-// Export the 'launchcode' object
+// Export 'launchcode' object
 module.exports = { launchcode };
 
 // let launchcode = {
