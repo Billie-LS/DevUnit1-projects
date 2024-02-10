@@ -1,11 +1,11 @@
-// Import the necessary modules
-use crate::LaunchCode;
+// Import the LaunchCode struct from the same module
+use launch_code::LaunchCode;
 
 // Test the LaunchCode struct and its methods
 #[cfg(test)]
 mod tests {
     // Import necessary items from the testing module
-    use super::LaunchCode;
+    use super::*;
 
     // Test the LaunchCode struct properties
     #[test]
