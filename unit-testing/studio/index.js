@@ -30,13 +30,17 @@ let launchcode = {
     percentageCoolEmployees: 100,
     programsOffered: ['Web Development', 'Data Analysis', 'Liftoff'],
     launchOutput: function (num) {
+
+        // array of objects - 'conditions'
         let conditions = [twoThree, twoFive, two, three, five];
     
         let output = ''; // empty string to store output
     
         // iterate each condition in 'conditions' array
         for (let condition of conditions) {
-            const { divisors, output: conditionOutput } = condition;
+
+            // Destructure 'condition' object to extract 'divisors' array
+            const { divisors, output: conditionOutput } = condition; // rename the 'output' property to 'conditionOutput'
     
             // check 'num' satisfies all divisors in current condition
             if (divisors.every(divisor => num % divisor === 0)) {
