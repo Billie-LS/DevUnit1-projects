@@ -1,49 +1,38 @@
-// baseline object 'launchcode'
-let launchcode = {
-    // key 'organization' value 'nonprofit'
-    organization: 'nonprofit',
-    // key 'executiveDirector' value 'Jeff'
-    executiveDirector: 'Jeff',
-    // key 'percentageCoolEmployees' value 100
-    percentageCoolEmployees: 100,
-    // key 'programsOffered' value is array of strings
-    programsOffered: ['Web Development', 'Data Analysis', 'Liftoff'],
-    // key 'launchOutput' value function() parameter 'num'
-    launchOutput: function(num) {
-        // keys represent conditions values represent outputs
-        const conditions = {
-            '2&3': 'LaunchCode!', // divisible by 2 and 3
-            '2&5': 'Launch Rocks! (CRASH!!!!)', // divisible by 2 and 5
-            2: 'Launch!', // divisible by 2 only
-            3: 'Code!', // divisible by 3 only
-            5: 'Rocks!' // divisible by 5 only
-        };
+launchOutput: function (num) {
+    const conditions = [
+        { divisors: [2, 3], 
+            output: 'LaunchCode!' // output for numbers divisible by 2 and 3
+        },    
+        { divisors: [2, 5], 
+            output: 'Launch Rocks! (CRASH!!!!)' // output for numbers divisible by 2 and 5
+        },    
+        { divisors: [2], 
+            output: 'Launch!' // output for numbers divisible by 2 only
+        },   
+        { divisors: [3], 
+            output: 'Code!' // output for numbers divisible by 3 only
+        },     
+        { divisors: [5], 
+            output: 'Rocks!' // output for numbers divisible by 5 only
+        },    
+    ];
 
-        let output = ''; // empty string to store output
+    let output = '';  // Initialize an empty string to store the output
 
-        // Check for specific conditions first
-        if (num % 2 === 0 && num % 3 === 0) { // divisible by 2 and 3
-            return conditions['2&3']; // Return 'LaunchCode!'
-        } 
-        if (num % 2 === 0 && num % 5 === 0) { // divisible by 2 and 5
-            return conditions['2&5']; // Return 'Launch Rocks! (CRASH!!!!)'
+    // Iterate over each condition in the 'conditions' array
+    for (let condition of conditions) {
+        const { divisors, output: conditionOutput } = condition;
+
+        // Check if the number 'num' satisfies all divisors in the current condition
+        if (divisors.every(divisor => num % divisor === 0)) {
+            // Concatenate the corresponding output to the 'output' string
+            output = conditionOutput; // Reset output instead of concatenating
         }
-
-        // Check other conditions
-        // Loop through each condition in the 'conditions' object
-        for (let condition in conditions) {
-
-            // Split the condition string (i.e. the key) to extract divisors, convert to numbers
-            const divisors = condition.split('&').map(Number);
-
-            // Check if the number satisfies each condition by ensuring it's divisible by all divisors
-            if (divisors.every(divisor => num % divisor === 0)) {
-
-                // Append corresponding output to output string
-                output += conditions[condition]; 
-            }
-        }
-        // Return the output if not empty; or default return 'Bang!'
-        return output || 'Bang!';
     }
-};
+
+    // Return the output or the default message if no conditions match
+    return output || 'Bang!';
+}
+
+// Export the launchcode object for external use
+module.exports = {launchcode};

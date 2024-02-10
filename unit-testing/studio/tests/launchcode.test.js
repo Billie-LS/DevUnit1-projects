@@ -38,7 +38,7 @@ describe("Testing launchcode launchOutput", function(){
 
   it('When passed number only divisible by 5, launchOutput() returns "Rocks!" ', function() {
     let result = test.launchcode.launchOutput; // test for property launchOutput
-    expect(result(5)).toEqual('Rocks!'); // Expected return 'Rocks!!'
+    expect(result(5)).toEqual('Rocks!'); // Expected return 'Rocks!'
   });
 
   it('When passed number evenly divisible by 2 and 3, launchOutput() returns "LaunchCode!" ', function() {
