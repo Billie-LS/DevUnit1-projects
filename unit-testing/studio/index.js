@@ -10,7 +10,7 @@ let launchcode = {
     programsOffered: ['Web Development', 'Data Analysis', 'Liftoff'],
     // key 'launchOutput' value function() parameter 'num'
     launchOutput: function(num) {
-        // object keys represent conditions values represent outputs
+        // keys represent conditions values represent outputs
         const conditions = {
             '2&3': 'LaunchCode!', // divisible by 2 and 3
             '2&5': 'Launch Rocks! (CRASH!!!!)', // divisible by 2 and 5
