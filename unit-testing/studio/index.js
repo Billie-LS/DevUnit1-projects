@@ -1,13 +1,3 @@
-const twoThree = {
-    divisors: [2, 3], 
-    output: 'LaunchCode!' 
-};
-
-const twoFive = {
-    divisors: [2, 5], 
-    output: 'Launch Rocks! (CRASH!!!!)' 
-};
-
 const two = {
     divisors: [2], 
     output: 'Launch!' 
@@ -22,6 +12,17 @@ const five = {
     divisors: [5], 
     output: 'Rocks!' 
 };
+
+const twoThree = {
+    divisors: [2, 3], 
+    output: 'LaunchCode!' 
+};
+
+const twoFive = {
+    divisors: [2, 5], 
+    output: 'Launch Rocks! (CRASH!!!!)' 
+};
+
 
 let launchcode = {
     organization: "nonprofit",
