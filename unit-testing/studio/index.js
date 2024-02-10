@@ -30,7 +30,7 @@ let launchcode = {
     percentageCoolEmployees: 100,
     programsOffered: ['Web Development', 'Data Analysis', 'Liftoff'],
     launchOutput: function (num) {
-        const conditions = [twoThree, twoFive, two, three, five];
+        let conditions = [twoThree, twoFive, two, three, five];
     
         let output = ''; // empty string to store output
     
