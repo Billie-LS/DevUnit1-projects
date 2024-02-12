@@ -30,7 +30,7 @@ function gradeLabs(labs) {
       result = "Error thrown";
       
       // output error message with type and message of error
-      console.log(`${lab.student} code encountered an error:\n type ${e.type} message ${e.message}, `);
+      console.log(`${lab.student} code encountered an error:\n type ${e.type} message ${e.message}, \n number is ${e.number}, \n stack is ${e.stack}`); 
     } 
     // 'finally' block run code regardless of whether an error occurred
     finally {
