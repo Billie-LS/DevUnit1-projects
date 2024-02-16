@@ -39,16 +39,27 @@ console.log(bBear.scores);
 
 console.log(mMaltese.average());
 
-//Add methods for adding scores, averaging scores and determining candidate status as described in the studio activity.
 
-// class ClassName {
-//     constructor(parameters) {
-//        //assign properties with this.key = value
-//     }
-
-//     methodName(parameters) {
-//        //function code
-//     }
-//  }
 
 //Part 4 - Use the methods to boost Glad Gator’s status to Reserve or higher. How many tests will it take to reach Reserve status? How many to reach Accepted? Remember, scores cannot exceed 100%.
+status() {
+    let appStat = '';
+    let aveScore = this.averageScores();
+    let appStatement = ``;
+    if (aveScore >= 90) {
+        appStat = 'Accepted'
+    } else if (aveScore >= 80 && aveScore < 90) {
+        appStat = 'Reserve'
+    } else if (aveScore >= 70 && aveScore < 80) {
+        appStat = 'Probationary'
+    } else if (aveScore >= 60 && aveScore < 70) {
+        appStat = 'Rejected'
+    } else {
+        appStat = 'Error'
+        // could instead use try/catch
+    }
+
+
+appStatement = `'${this.name} earned an average test score of ${aveScore}% and has a status of ${appStat}.'`
+return appStatement
+}
