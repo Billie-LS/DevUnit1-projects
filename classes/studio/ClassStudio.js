@@ -5,7 +5,7 @@ class CrewCandidate {
   constructor(name, mass, scores = []) {
     this.name = name;
     this.mass = mass;
-    this.scores = scores.map(parseFloat);
+    this.scores = scores.map(Number);
   }
   addScore(newScore) {
     this.scores.push(newScore);
