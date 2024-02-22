@@ -1,1 +1,19 @@
 /* Start adding your styling below! */ 
+/* styles.css */
+
+body {
+    background-color: yellow;
+}
+
+h1, h2 {
+    font-size: 36px;
+    text-align: center;
+}
+
+#cool-text {
+    color: blue; /* Change font color to blue */
+    }
+    
+    #list-color {
+        color: blueviolet; /* Change color of elements in the ordered list */
+    }
