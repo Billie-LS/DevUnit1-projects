@@ -1,3 +1,4 @@
+/* Existing CSS styles */
 #shuttleBackground {
     background-color: green;
     display: inline-block;
@@ -5,6 +6,20 @@
     width: 40%;
     position: relative;
 }
+
+#rocket {
+    position: absolute;
+    bottom: 0; /* Position at the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust horizontally centered position */
+}
+
+/* #rocket {
+    position: absolute;
+    top: 50%; /* Initial vertical position */
+    left: 50%; /* Initial horizontal position */
+    transform: translate(-50%, -50%); /* Center the rocket */
+} */
 
 #flightStatus {
     color: green;
@@ -27,4 +42,33 @@
 
 .centered {
     text-align: center;
+}
+
+/* Modified CSS styles for buttons */
+button {
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: #CCCCCC; /* Grey background */
+    color: #4CAF50; /* Green text color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Add pointer cursor on hover */
+    margin: 5px; /* Add some margin between buttons */
+    transition: background-color 0.3s; /* Add smooth transition effect */
+}
+
+/* Green background on hover for "Launch" button */
+#takeoff:hover {
+    background-color: #4CAF50;
+    color: white; /* White text color on hover */
+}
+
+/* Green background on hover for "Land" button */
+#landing:hover {
+    background-color: #4CAF50;
+    color: white; /* White text color on hover */
+}
+
+/* Red background on hover for "Abort" button */
+#missionAbort:hover {
+    background-color: #f44336; /* Red background on hover */
+    color: white; /* White text color on hover */
 }
