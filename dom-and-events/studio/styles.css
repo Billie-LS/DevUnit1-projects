@@ -11,9 +11,9 @@
 
 #rocket { /* rocket image styling */
     position: absolute; /* absolute positioning in shuttleBackground */
-    bottom: 0; /* bottom position of container */
-    left: 50%; /* center horizontally */
-    transform: translateX(-50%); /* Adjust horizontally centered position */
+    /* bottom: 0;  bottom position of container
+    left: 50%;  center horizontally
+    transform: translateX(-50%);  Adjust horizontally centered position */
 }
 
 #flightStatus {

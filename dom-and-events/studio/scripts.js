@@ -144,7 +144,7 @@ function init() {
     });
 
     document.getElementById("left").addEventListener("click", function () {
-      let currentPosition = parseInt(rocket.style.left) || 0;
+      let currentPosition = parseFloat(rocket.style.left) || 0;
       currentPosition -= 10;
       rocket.style.left = currentPosition + "px";
     });
