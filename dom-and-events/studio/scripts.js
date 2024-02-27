@@ -53,7 +53,7 @@ function init() {
     });
 
     const moveRocket = function (direction) {
-      let currentPosition = parseInt(rocket.style.bottom) || 0; // Use bottom for vertical position
+      let currentPosition = parseFloat(rocket.style.bottom) || 0; // Use bottom for vertical position
       if (direction === "up") {
         currentPosition += 10;
         spaceShuttleHeight.textContent =
