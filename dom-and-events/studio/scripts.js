@@ -26,45 +26,106 @@ function init() {
       }
     });
 
-    landButton.addEventListener("click", function () {
-      window.alert("The shuttle is landing. Landing gear engaged.");
-      flightStatus.textContent = "The shuttle has landed.";
-      shuttleBackground.style.backgroundColor = "green";
-      spaceShuttleHeight.textContent = "0 miles";
-      // Reset rocket position to center at the bottom after landing
-      rocket.style.left =
-        shuttleBackground.offsetWidth / 2 - rocket.offsetWidth / 2 + "px";
-      rocket.style.bottom = "0";
-    });
-
-    abortButton.addEventListener("click", function () {
+    // Event listener for the landButton click event
+    landButton.addEventListener("click", () => {
+      // Confirm landing
       const confirmed = window.confirm(
-        "Confirm that you want to abort the mission."
+        "Confirm that you want to land the shuttle."
       );
+
+      // If confirmed, proceed with landing
       if (confirmed) {
-        flightStatus.textContent = "Mission aborted.";
+        // Alert the user that the shuttle is landing
+        window.alert("The shuttle is landing. Landing gear engaged.");
+
+        // Update flight status, background color, and shuttle height text content
+        flightStatus.textContent = "The shuttle has landed.";
         shuttleBackground.style.backgroundColor = "green";
         spaceShuttleHeight.textContent = "0 miles";
-        // Reset rocket position to center at the bottom after aborting mission
-        rocket.style.left =
-          shuttleBackground.offsetWidth / 2 - rocket.offsetWidth / 2 + "px";
+
+        // Reset rocket position to center at the bottom after landing
+        rocket.style.left = `${
+          shuttleBackground.offsetWidth / 2 - rocket.offsetWidth / 2
+        }px`;
         rocket.style.bottom = "0";
       }
     });
 
-    const moveRocket = function (direction) {
-      let currentPosition = parseFloat(rocket.style.bottom) || 0; // Use bottom for vertical position
-      if (direction === "up") {
-        currentPosition += 10;
-        spaceShuttleHeight.textContent =
-          parseFloat(spaceShuttleHeight.textContent) + 10000 + " miles";
-      } else if (direction === "down") {
-        currentPosition -= 10;
-        spaceShuttleHeight.textContent =
-          parseFloat(spaceShuttleHeight.textContent) - 10000 + " miles";
+    // landButton.addEventListener("click", function () {
+    //   window.alert("The shuttle is landing. Landing gear engaged.");
+    //   flightStatus.textContent = "The shuttle has landed.";
+    //   shuttleBackground.style.backgroundColor = "green";
+    //   spaceShuttleHeight.textContent = "0 miles";
+    //   // Reset rocket position to center at the bottom after landing
+    //   rocket.style.left =
+    //     shuttleBackground.offsetWidth / 2 - rocket.offsetWidth / 2 + "px";
+    //   rocket.style.bottom = "0";
+    // });
+
+    // Event listener for the abortButton click event
+    abortButton.addEventListener("click", () => {
+      // Confirmation dialog for aborting the mission
+      const confirmed = window.confirm(
+        "Confirm that you want to abort the mission."
+      );
+
+      // If the user confirms the abort
+      if (confirmed) {
+        // Update flight status, background color, and shuttle height text content
+        [
+          flightStatus.textContent,
+          shuttleBackground.style.backgroundColor,
+          spaceShuttleHeight.textContent,
+        ] = ["Mission aborted.", "green", "0 miles"];
+
+        // Reset rocket position to center at the bottom after aborting mission
+        rocket.style.left = `${
+          shuttleBackground.offsetWidth / 2 - rocket.offsetWidth / 2
+        }px`;
+        rocket.style.bottom = "0";
       }
+    });
+
+    // abortButton.addEventListener("click", function () {
+    //   const confirmed = window.confirm(
+    //     "Confirm that you want to abort the mission."
+    //   );
+    //   if (confirmed) {
+    //     flightStatus.textContent = "Mission aborted.";
+    //     shuttleBackground.style.backgroundColor = "green";
+    //     spaceShuttleHeight.textContent = "0 miles";
+    //     // Reset rocket position to center at the bottom after aborting mission
+    //     rocket.style.left =
+    //       shuttleBackground.offsetWidth / 2 - rocket.offsetWidth / 2 + "px";
+    //     rocket.style.bottom = "0";
+    //   }
+    // });
+
+    const moveRocket = (direction) => {
+      let currentPosition = parseFloat(rocket.style.bottom) || 0; // Use bottom for vertical position
+      let distanceChange = direction === "up" ? 10 : -10;
+      let heightChange = direction === "up" ? 10000 : -10000;
+
+      currentPosition += distanceChange;
+      spaceShuttleHeight.textContent =
+        parseFloat(spaceShuttleHeight.textContent) + heightChange + " miles";
+
       rocket.style.bottom = currentPosition + "px"; // Update bottom for vertical position
     };
+
+    // const moveRocket = function (direction) {
+    //   let currentPosition = parseFloat(rocket.style.bottom) || 0; // Use bottom for vertical position
+    //   if (direction === "up") {
+    //     currentPosition += 10;
+    //     spaceShuttleHeight.textContent =
+    //       parseFloat(spaceShuttleHeight.textContent) + 10000 + " miles";
+    //   } else if (direction === "down") {
+    //     currentPosition -= 10;
+    //     spaceShuttleHeight.textContent =
+    //       parseFloat(spaceShuttleHeight.textContent) - 10000 + " miles";
+    //   }
+    //   rocket.style.bottom = currentPosition + "px"; // Update bottom for vertical position
+    // };
 
     document.getElementById("up").addEventListener("click", function () {
       moveRocket("up");
@@ -360,7 +421,7 @@ init();
 //   });
 // }
 
-init();
+// init();
 
 // function init() {
 //   window.addEventListener("load", function () {
