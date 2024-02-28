@@ -1,19 +1,41 @@
 /* Start adding your styling below! */ 
 /* styles.css */
 
+/* change background color of body to yellow */
 body {
     background-color: yellow;
+    /* text-align: center; */
 }
 
-h1, h2 {
-    font-size: 36px;
+/* class to align text to center */
+.center {
     text-align: center;
 }
 
+/* change text color all paragraph to green */
+p {
+    color: green;
+}
+
+/* set font size for h1 elements */
+h1 {
+    font-size: 36px; 
+}
+
+/* set font size for h1 and h2 elements */
+h1, h2 {
+    font-size: 36px; /* Set font size to 36 pixels */
+    /* text-align: center; */
+}
+
+/* change color of element/s with id "cool-text" to blue */
 #cool-text {
-    color: blue; /* Change font color to blue */
-    }
-    
-    #list-color {
-        color: blueviolet; /* Change color of elements in the ordered list */
-    }
+    color: blue; /* change color to blue */
+}
+
+/* change color of element/s with id "list-color" to blueviolet */
+#list-color {
+    color: blueviolet; /* change color of ordered list elements */
+}
+
+
