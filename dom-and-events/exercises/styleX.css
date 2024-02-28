@@ -1,0 +1,11 @@
+h1 {
+  text-decoration: underline;
+}
+
+#liftoffButton:hover {
+  background-color: green;
+}
+
+#abortMission:hover {
+  background-color: red;
+}

@@ -3,19 +3,18 @@ function init() {
   const button = document.getElementById("liftoffButton");
   const paragraph = document.getElementById("statusReport");
 
-  // Add event listener to liftoffButton
-  button.addEventListener("click", function () {
-    // Revert background color to original when cursor leaves
-    // button.style.backgroundColor = "";
+  // Put your code for the exercises here.
 
-    // Change text content when button is clicked
-    paragraph.textContent = "Houston, we have liftoff!";
+  // Add event listener to the "Take off" button
+  liftoffButton.addEventListener("click", function () {
+    // Update the text content of the paragraph
+    statusReport.textContent = "Houston, we have liftoff!";
   });
 
-  // Add event listener to abortMission button
-  missionAbort.addEventListener("mouseleave", function () {
+  // Add event listener to the "Take off" button
+  missionAbort.addEventListener("mouseout", function (event) {
     // Revert background color to original when cursor leaves
-    // missionAbort.style.backgroundColor = "";
+    event.target.style.backgroundColor = "";
   });
 }
 

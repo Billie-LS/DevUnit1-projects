@@ -1,0 +1,19 @@
+{
+   "name": "exercises",
+   "version": "2.0.0",
+   "description": "DOM exercises with handlers and listeners",
+   "main": "script.js",
+   "scripts": {
+      "test": "jest"
+   },
+   "author": "billie",
+   "license": "ISC",
+   "devDependencies": {
+      "@types/jest": "^27.0.2",
+      "jest": "^29.7.0",
+      "jest-environment-jsdom": "^29.7.0"
+   },
+   "jest": {
+      "testEnvironment": "jsdom"
+   }
+}
