@@ -15,6 +15,14 @@ window.addEventListener("load", () => {
   const shuttleBackGround = document.getElementById("shuttleBackground"); // object represent shuttle background area
   const spaceShuttleHeight = document.getElementById("spaceShuttleHeight"); // object represent space shuttle height area
 
+  // ROCKET IMAGE
+  // Get the rocket element
+  const rocket = document.getElementById("rocket");
+
+  // Initialize rocket position
+  let rocketPositionX = 0; //
+  let rocketPositionY = 0; //
+
   // add event listener to takeoffButton
   takeOffButton.addEventListener("click", () => {
     // ask confirmation for Take off
@@ -23,7 +31,7 @@ window.addEventListener("load", () => {
     );
     //
     if (shouldTakeOff) {
-      // Update the flight status
+      // update the flight status
       flightStatus.innerHTML = "Shuttle in flight.";
       // change shuttleBackGround color
       shuttleBackGround.style.backgroundColor = "blue";
@@ -34,7 +42,7 @@ window.addEventListener("load", () => {
 
   landingButton.addEventListener("click", () => {
     window.alert("The shuttle is landing. Landing gear engaged.");
-    // Update the flight status
+    // update the flight status
     flightStatus.innerHTML = "The shuttle has landed.";
     // change shuttleBackGround color
     shuttleBackGround.style.backgroundColor = "green";
@@ -48,12 +56,32 @@ window.addEventListener("load", () => {
       "Confirm that you want to abort the mission."
     );
     if (shouldAbort) {
-      // Update the flight status
+      // update the flight status
       flightStatus.innerHTML = "Mission aborted.";
       // change shuttleBackGround color
       shuttleBackGround.style.backgroundColor = "green";
       // update spaceShuttleHeight
       spaceShuttleHeight.innerHTML = "0";
+    }
+  });
+
+  // using event delegation for directional buttons
+  document.addEventListener("click", (event) => {
+    if (event.target.id === "left") {
+      rocketPositionX -= 10;
+      rocket.style.marginLeft = rocketPositionX + "px";
+    }
+    if (event.target.id === "right") {
+      rocketPositionX += 10;
+      rocket.style.marginLeft = rocketPositionX + "px";
+    }
+    if (event.target.id === "up") {
+      rocketPositionY += 10;
+      rocket.style.marginBottom = rocketPositionY + "px";
+    }
+    if (event.target.id === "down") {
+      rocketPositionY -= 10;
+      rocket.style.marginBottom = rocketPositionY + "px";
     }
   });
 });
