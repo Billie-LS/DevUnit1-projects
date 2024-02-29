@@ -47,12 +47,13 @@ window.addEventListener("load", () => {
     window.alert("The shuttle is landing. Landing gear engaged.");
     // update the flight status
     flightStatus.innerHTML = "The shuttle has landed.";
-    // change shuttleBackGround color
-    shuttleBackGround.style.backgroundColor = "green";
+    // // change shuttleBackGround color
+    // shuttleBackGround.style.backgroundColor = "green";
 
-    altitude = 0;
-    // update spaceShuttleHeight
-    spaceShuttleHeight.innerHTML = altitude;
+    // altitude = 0;
+    // // update spaceShuttleHeight
+    // spaceShuttleHeight.innerHTML = altitude;
+    resetRocket();
   });
 
   missionAbortButton.addEventListener("click", () => {
@@ -63,12 +64,13 @@ window.addEventListener("load", () => {
     if (shouldAbort) {
       // update the flight status
       flightStatus.innerHTML = "Mission aborted.";
-      // change shuttleBackGround color
-      shuttleBackGround.style.backgroundColor = "green";
+      //   // change shuttleBackGround color
+      //   shuttleBackGround.style.backgroundColor = "green";
 
-      altitude = 0;
-      // update spaceShuttleHeight
-      spaceShuttleHeight.innerHTML = altitude;
+      //   altitude = 0;
+      //   // update spaceShuttleHeight
+      //   spaceShuttleHeight.innerHTML = altitude;
+      resetRocket();
     }
   });
 
@@ -78,11 +80,11 @@ window.addEventListener("load", () => {
       window.getComputedStyle(shuttleBackGround).getPropertyValue("width")
     );
 
-    if (event.target.id === "left" && rocketPositionX > -(bkgWidth / 2 - 15)) {
+    if (event.target.id === "left" && rocketPositionX > -(bkgWidth / 2 - 35)) {
       rocketPositionX -= 10;
       rocket.style.marginLeft = rocketPositionX + "px";
     }
-    if (event.target.id === "right" && rocketPositionX < bkgWidth / 2 - 15) {
+    if (event.target.id === "right" && rocketPositionX < bkgWidth / 2 - 35) {
       rocketPositionX += 10;
       rocket.style.marginLeft = rocketPositionX + "px";
     }
@@ -98,4 +100,15 @@ window.addEventListener("load", () => {
       rocket.style.marginBottom = rocketPositionY + "px";
     }
   });
+  function resetRocket() {
+    // change shuttleBackGround color
+    shuttleBackGround.style.backgroundColor = "green";
+    altitude = 0;
+    // update spaceShuttleHeight
+    spaceShuttleHeight.innerHTML = altitude;
+    rocketPositionX = 0;
+    rocketPositionY = 0;
+    rocket.style.marginLeft = rocketPositionX + "px";
+    rocket.style.marginBottom = rocketPositionY + "px";
+  }
 });
