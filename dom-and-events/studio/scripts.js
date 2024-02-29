@@ -16,13 +16,13 @@ window.addEventListener("load", () => {
   const spaceShuttleHeight = document.getElementById("spaceShuttleHeight"); // object represent space shuttle height area
 
   // ROCKET IMAGE
-  // Get the rocket element
+  // get rocket element
   const rocket = document.getElementById("rocket");
 
-  // Initialize rocket position
-  let rocketPositionX = 0; //
-  let rocketPositionY = 0; //
-  let altitude = 0; //
+  // initialize rocket position
+  let rocketPositionX = 0; // initialize rocket X-axis position
+  let rocketPositionY = 0; // initialize rocket Y-axis position
+  let altitude = 0; // initialize altitude to zero
 
   // add event listener to takeoffButton
   takeOffButton.addEventListener("click", () => {
@@ -36,7 +36,7 @@ window.addEventListener("load", () => {
       flightStatus.innerHTML = "Shuttle in flight.";
       // change shuttleBackGround color
       shuttleBackGround.style.backgroundColor = "blue";
-
+      // re-assign altitude to 10000 feet
       altitude = 10000;
       // update spaceShuttleHeight
       spaceShuttleHeight.innerHTML = altitude;
@@ -49,10 +49,11 @@ window.addEventListener("load", () => {
     flightStatus.innerHTML = "The shuttle has landed.";
     // // change shuttleBackGround color
     // shuttleBackGround.style.backgroundColor = "green";
-
+    // // re-assign altitude to 0 feet
     // altitude = 0;
     // // update spaceShuttleHeight
     // spaceShuttleHeight.innerHTML = altitude;
+    // call resetRocket to initial state
     resetRocket();
   });
 
@@ -66,49 +67,70 @@ window.addEventListener("load", () => {
       flightStatus.innerHTML = "Mission aborted.";
       //   // change shuttleBackGround color
       //   shuttleBackGround.style.backgroundColor = "green";
-
+      // // re-assign altitude to 0 feet
       //   altitude = 0;
       //   // update spaceShuttleHeight
       //   spaceShuttleHeight.innerHTML = altitude;
+      // call resetRocket to initial state
       resetRocket();
     }
   });
 
   // using event delegation for directional buttons
   document.addEventListener("click", (event) => {
-    let bkgWidth = parseInt(
+    // Determine background width
+    let bkgWidth = parseFloat(
       window.getComputedStyle(shuttleBackGround).getPropertyValue("width")
     );
 
+    // rocket moves relative to background per directional button click
+    // logic check left button click AND ensure rocket within left boundary
     if (event.target.id === "left" && rocketPositionX > -(bkgWidth / 2 - 35)) {
+      // decrease rocket X-axis position by 10
       rocketPositionX -= 10;
+      // set rocket element left margin to updated X-axis in pixels
       rocket.style.marginLeft = rocketPositionX + "px";
     }
+    // logic check right button click AND ensure rocket stays within right boundary
     if (event.target.id === "right" && rocketPositionX < bkgWidth / 2 - 35) {
+      // increase rocket X-axis position by 10
       rocketPositionX += 10;
+      // set rocket element left margin to updated X-axis in pixels
       rocket.style.marginLeft = rocketPositionX + "px";
     }
+    // logic check up button click AND ensure altitude below set maximum limit
     if (event.target.id === "up" && altitude < 250000) {
+      // increase rocket Y-axis position 10
       rocketPositionY += 10;
+      // set rocket element bottom margin to updated Y-axis in pixels
       rocket.style.marginBottom = rocketPositionY + "px";
+      // increase altitude 10000 feet
       altitude += 10000;
       // update spaceShuttleHeight
       spaceShuttleHeight.innerHTML = altitude;
     }
+    // logic check down button click AND ensure rocket not at bottom
     if (event.target.id === "down" && rocketPositionY > 0) {
+      // decrease rocket Y-axis position 10
       rocketPositionY -= 10;
+      // set rocket element bottom margin to updated Y-axis in pixels
       rocket.style.marginBottom = rocketPositionY + "px";
     }
   });
+  // function to reset rocket to initial state
   function resetRocket() {
     // change shuttleBackGround color
     shuttleBackGround.style.backgroundColor = "green";
     altitude = 0;
     // update spaceShuttleHeight
     spaceShuttleHeight.innerHTML = altitude;
+    // reset rocket X-axis position
     rocketPositionX = 0;
+    // reset rocket Y-axis position
     rocketPositionY = 0;
+    // set rocket element left margin to reset X-axis
     rocket.style.marginLeft = rocketPositionX + "px";
+    // set rocket element bottom margin to reset Y-axis
     rocket.style.marginBottom = rocketPositionY + "px";
   }
 });
