@@ -74,11 +74,15 @@ window.addEventListener("load", () => {
 
   // using event delegation for directional buttons
   document.addEventListener("click", (event) => {
-    if (event.target.id === "left") {
+    let bkgWidth = parseInt(
+      window.getComputedStyle(shuttleBackGround).getPropertyValue("width")
+    );
+
+    if (event.target.id === "left" && rocketPositionX > -(bkgWidth / 2 - 15)) {
       rocketPositionX -= 10;
       rocket.style.marginLeft = rocketPositionX + "px";
     }
-    if (event.target.id === "right") {
+    if (event.target.id === "right" && rocketPositionX < bkgWidth / 2 - 15) {
       rocketPositionX += 10;
       rocket.style.marginLeft = rocketPositionX + "px";
     }
