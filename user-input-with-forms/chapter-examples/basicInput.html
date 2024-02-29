@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Example</title>
+    </head>
+    <body>
+        <form>
+        <!-- basic input tag -->
+        <input type="text"/>
+        <!-- basic input tag with 2 attributes, name and type -->
+        <input type="text" name="username"/>
+        <!-- label tag tags are used to provide a textual label -->
+        <label>Username <input type="text" name="username"/></label>
+        <label>Team Name <input type="text" name="team"/></label>
+        <!-- using id attribute of input with for attribute of label -->
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text"/>
+        <!-- using checkbox type -->
+        <label>Subscribe to Newsletter
+        <input name="newsletter" type="checkbox"/>
+        </label>
+        <label for="Subscribe">Subscribe to Newsletter</label>
+        <input id="Subscribe" name="newsletter" type="checkbox"/>
+        <!-- using value attribute of input to set default value -->
+        <label>Language <input name="language" type="text" value="JavaScript"/></label>
+        </form>
+    </body>
+</html>
