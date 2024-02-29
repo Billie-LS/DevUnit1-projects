@@ -22,6 +22,7 @@ window.addEventListener("load", () => {
   // Initialize rocket position
   let rocketPositionX = 0; //
   let rocketPositionY = 0; //
+  let altitude = 0; //
 
   // add event listener to takeoffButton
   takeOffButton.addEventListener("click", () => {
@@ -35,8 +36,10 @@ window.addEventListener("load", () => {
       flightStatus.innerHTML = "Shuttle in flight.";
       // change shuttleBackGround color
       shuttleBackGround.style.backgroundColor = "blue";
+
+      altitude = 10000;
       // update spaceShuttleHeight
-      spaceShuttleHeight.innerHTML = "10000";
+      spaceShuttleHeight.innerHTML = altitude;
     }
   });
 
@@ -46,8 +49,10 @@ window.addEventListener("load", () => {
     flightStatus.innerHTML = "The shuttle has landed.";
     // change shuttleBackGround color
     shuttleBackGround.style.backgroundColor = "green";
+
+    altitude = 0;
     // update spaceShuttleHeight
-    spaceShuttleHeight.innerHTML = "0";
+    spaceShuttleHeight.innerHTML = altitude;
   });
 
   missionAbortButton.addEventListener("click", () => {
@@ -60,8 +65,10 @@ window.addEventListener("load", () => {
       flightStatus.innerHTML = "Mission aborted.";
       // change shuttleBackGround color
       shuttleBackGround.style.backgroundColor = "green";
+
+      altitude = 0;
       // update spaceShuttleHeight
-      spaceShuttleHeight.innerHTML = "0";
+      spaceShuttleHeight.innerHTML = altitude;
     }
   });
 
@@ -75,11 +82,14 @@ window.addEventListener("load", () => {
       rocketPositionX += 10;
       rocket.style.marginLeft = rocketPositionX + "px";
     }
-    if (event.target.id === "up") {
+    if (event.target.id === "up" && altitude < 250000) {
       rocketPositionY += 10;
       rocket.style.marginBottom = rocketPositionY + "px";
+      altitude += 10000;
+      // update spaceShuttleHeight
+      spaceShuttleHeight.innerHTML = altitude;
     }
-    if (event.target.id === "down") {
+    if (event.target.id === "down" && rocketPositionY > 0) {
       rocketPositionY -= 10;
       rocket.style.marginBottom = rocketPositionY + "px";
     }
