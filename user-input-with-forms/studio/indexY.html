@@ -5,24 +5,24 @@
 	<meta charset="utf-8">
 	<script>
         // object to store engine values and URLs as key : value pairs
-        let actions = {
-            google: 'https://www.google.com/search',
-            duckDuckGo: 'https://duckduckgo.com',
-            bing: 'https://www.bing.com/search',
-            ask: 'https://www.ask.com/web'
-        };
+        // let actions = {
+        //     google: 'https://www.google.com/search',
+        //     duckDuckGo: 'https://duckduckgo.com',
+        //     bing: 'https://www.bing.com/search',
+        //     ask: 'https://www.ask.com/web'
+        // };
 
         function setSearchEngine(){
             // console.log('clicked');
             // event.preventDefault();
             const buttonSelected = document.querySelector('input[name=engine]:checked');
             const form = document.getElementById('searchForm');
-            // let url = buttonSelected.value;
-            let url = actions[buttonSelected.value];
+            let url = buttonSelected.value;
+            // let url = actions[buttonSelected.value];
             form.action = url
         }
 		
-    window.addEventListener("load", function(){
+    window.addEventListener("load", ()=>{
         const form = document.getElementById('searchForm');
         // note that 'setSearchEngine' is referenced but not 'called'
         form.addEventListener("submit", setSearchEngine);
@@ -35,10 +35,10 @@
 	<!-- target="_blank" will open in new tab -->
     <form id="searchForm" target="_blank">
         <input id="q" name="q" type="text"/>
-        <label><input type="radio" name="engine" value="google"/> Google</label>
-        <label><input type="radio" name="engine" value="duckDuckGo"/> DuckDuckGo</label>
-        <label><input type="radio" name="engine" value="bing"/> Bing</label>
-        <label><input type="radio" name="engine" value="ask"/> Ask</label>
+        <label><input type="radio" name="engine" value="https://www.google.com/search"/> Google</label>
+        <label><input type="radio" name="engine" value="https://duckduckgo.com"/> DuckDuckGo</label>
+        <label><input type="radio" name="engine" value="https://www.bing.com/search"/> Bing</label>
+        <label><input type="radio" name="engine" value="https://www.ask.com/web"/> Ask</label>
         <button id="submit" type="submit" value="Go!">  Go!</button>
 	</form>
 
