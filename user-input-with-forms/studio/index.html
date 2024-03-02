@@ -15,14 +15,14 @@
         function setSearchEngine(){
             // console.log('clicked');
             // event.preventDefault();
-            const buttonSelected = document.querySelector('input[name=engine]:checked');
+            const engineSelected = document.querySelector('input[name=engine]:checked');
             const form = document.getElementById('searchForm');
             // let url = buttonSelected.value;
-            let url = actions[buttonSelected.value];
+            let url = actions[engineSelected.value];
             form.action = url
         }
 		
-    window.addEventListener("load", function(){
+    window.addEventListener("load", () => {
         const form = document.getElementById('searchForm');
         // note that 'setSearchEngine' is referenced but not 'called'
         form.addEventListener("submit", setSearchEngine);
@@ -33,8 +33,8 @@
 <body>
 
 	<!-- target="_blank" will open in new tab -->
-    <form id="searchForm" target="_blank">
-        <input id="q" name="q" type="text"/>
+    <form id="searchForm" action="" target="_blank">
+        <input id="q" name="q" type="text"/> 
         <label><input type="radio" name="engine" value="google"/> Google</label>
         <label><input type="radio" name="engine" value="duckDuckGo"/> DuckDuckGo</label>
         <label><input type="radio" name="engine" value="bing"/> Bing</label>
