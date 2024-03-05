@@ -28,6 +28,7 @@ window.addEventListener("load", () => {
       bioDiv.classList.add("bio");
 
       // bonus 2
+      // identify if astronaut active and set activeClass accordingly
       let activeClass = astronaut.active ? "active" : "";
 
       // fill bio div with astronaut's bio
