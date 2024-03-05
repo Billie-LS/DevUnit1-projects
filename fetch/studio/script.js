@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
   // Get container element for astronaut data to display
   const container = document.getElementById("container");
 
-  // fetch astronaut data from API
+  // fetch astronaut data from API - traditional syntax
   fetch("https://handlers.education.launchcode.org/static/astronauts.json")
     // parse response as JSON
     .then((res) => res.json())
