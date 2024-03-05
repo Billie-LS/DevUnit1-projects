@@ -11,6 +11,12 @@ window.addEventListener("load", () => {
     );
     let astronauts = await res.json();
 
+    // bonus 1
+    // sort by keys of object with JS sort function logic
+    astronauts.sort((a, b) => {
+      return a.hoursInSpace < b.hoursInSpace ? 1 : -1;
+    });
+
     // iterate each astronaut in data
     astronauts.forEach((astronaut) => {
       // generate div element for each astronaut's data
@@ -21,12 +27,17 @@ window.addEventListener("load", () => {
       const bioDiv = document.createElement("div");
       bioDiv.classList.add("bio");
 
+      // bonus 2
+      let activeClass = astronaut.active ? "active" : "";
+
       // fill bio div with astronaut's bio
       bioDiv.innerHTML = `
             <h3>${astronaut.firstName} ${astronaut.lastName}</h3>
                 <ul>
                     <li>Hours in space: ${astronaut.hoursInSpace}</li>
-                    <li>Active: ${astronaut.active ? "Yes" : "No"}</li>
+                    <li class= "${activeClass}">Active: ${
+        astronaut.active ? "Yes" : "No"
+      }</li>
                     <li>Skills: ${astronaut.skills.join(", ")}</li>
                 </ul>
             `;
