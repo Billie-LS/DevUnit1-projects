@@ -9,7 +9,59 @@ let shuttleSpeed = 15000;
 
 // a) If crewStatus is true, print "Crew Ready" else print "Crew Not Ready".
 
+// crewStatus = (spaceSuitsOn && shuttleCabinReady)
+
+// is crewStatus true + true = true
+if (crewStatus === true) {
+  console.log("Crew Ready");
+  //   return;
+}
+if (crewStatus === false) {
+  console.log("Crew Not Ready");
+  //   return;
+}
+
+// crewStatus = (spaceSuitsOn && shuttleCabinReady)
+if (crewStatus) {
+  // is crewStatus true + true = true
+  console.log("Crew Ready");
+} else {
+  console.log("Crew Not Ready");
+}
+
 // b) If computerStatusCode is 200, print "Please stand by. Computer is rebooting." Else if computerStatusCode is 400, print "Success! Computer online." Else print "ALERT: Computer offline!"
+switch (computerStatusCode) {
+  case 200:
+    console.log("Please stand by. Computer is rebooting.");
+    break;
+  case 400:
+    console.log("Success! Computer online.");
+    break;
+  default:
+    console.log("ALERT: Computer offline!");
+}
+
+if (computerStatusCode === 200) {
+  console.log("Please stand by. Computer is rebooting.");
+  //   return;
+}
+if (computerStatusCode === 400) {
+  console.log("Success! Computer online.");
+  //   return;
+}
+if (computerStatusCode !== 200 && computerStatusCode !== 400) {
+  console.log("ALERT: Computer offline!");
+  //   return;
+}
+
+if (computerStatusCode === 200) {
+  // is crewStatus true + true = true
+  console.log("Please stand by. Computer is rebooting.");
+} else if (computerStatusCode === 400) {
+  console.log("Success! Computer online.");
+} else {
+  console.log("ALERT: Computer offline!");
+}
 
 // c) If shuttleSpeed is > 17,500, print "ALERT: Escape velocity reached!" Else if shuttleSpeed is < 8000, print "ALERT: Cannot maintain orbit!" Else print "Stable speed".
 
