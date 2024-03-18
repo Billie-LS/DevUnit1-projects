@@ -17,10 +17,13 @@ if (engineIndicatorLight === "green") {
 
 if (engineIndicatorLight === "green") {
   console.log("engines have started");
+  return;
 }
 if (engineIndicatorLight === "green blinking") {
   console.log("engines are preparing to start");
+  return;
 }
 if (engineIndicatorLight == "red blinking") {
   console.log("engines are off");
+  return;
 }
