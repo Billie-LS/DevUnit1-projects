@@ -64,6 +64,25 @@ if (computerStatusCode === 200) {
 }
 
 // c) If shuttleSpeed is > 17,500, print "ALERT: Escape velocity reached!" Else if shuttleSpeed is < 8000, print "ALERT: Cannot maintain orbit!" Else print "Stable speed".
+switch (shuttleSpeed) {
+  case shuttleSpeed > 17500:
+    console.log("ALERT: Escape velocity reached!");
+    break;
+  case shuttleSpeed < 8000:
+    console.log("ALERT: Cannot maintain orbit!");
+    break;
+  default:
+    console.log("Stable speed");
+}
+
+if (shuttleSpeed > 17500) {
+  // is crewStatus true + true = true
+  console.log("ALERT: Escape velocity reached!");
+} else if (shuttleSpeed < 8000) {
+  console.log("ALERT: Cannot maintain orbit!");
+} else {
+  console.log("Stable speed");
+}
 
 // 4) PREDICT: Do the code blocks shown in the 'predict.txt' file produce the same result?
 
