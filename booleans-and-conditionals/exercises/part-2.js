@@ -76,6 +76,16 @@ switch (shuttleSpeed) {
 }
 
 if (shuttleSpeed > 17500) {
+  console.log("ALERT: Escape velocity reached!");
+}
+if (shuttleSpeed < 8000) {
+  console.log("ALERT: Cannot maintain orbit!");
+}
+if (shuttleSpeed > 8000) {
+  console.log("Stable speed");
+}
+
+if (shuttleSpeed > 17500) {
   // is crewStatus true + true = true
   console.log("ALERT: Escape velocity reached!");
 } else if (shuttleSpeed < 8000) {
