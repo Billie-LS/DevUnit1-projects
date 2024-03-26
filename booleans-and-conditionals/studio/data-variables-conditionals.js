@@ -1,4 +1,21 @@
 // Initialize Variables below
+let date = 'Monday 2019-03-18';
+let time = 'time	10:05:34 AM';
+let astronautCount	= parseFloat(7);
+let astronautStatus	= 'ready'
+let averageAstronautMassKg	= parseFloat(80.7);
+crewMassKg	astronautCount * averageAstronautMassKg
+fuelMassKg	760,000
+shuttleMassKg	74842.31
+totalMassKg	crewMassKg + fuelMassKg + shuttleMassKg
+maximumMassLimit	850000
+fuelTempCelsius	-225
+minimumFuelTemp	-300
+maximumFuelTemp	-150
+fuelLevel	100%
+weatherStatus	clear
+preparedForLiftOff	true
+
 
 // add logic below to verify total number of astronauts for shuttle launch does not exceed 7
 
