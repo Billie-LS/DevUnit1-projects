@@ -17,15 +17,21 @@ let weatherStatus = "clear";
 let preparedForLiftOff = true;
 
 // add logic below to verify total number of astronauts for shuttle launch does not exceed 7
+if (astronautCount <= 7) {
+}
 
 // add logic below to verify all astronauts are ready
-
+if (astronautStatus === "ready") {
+}
 // add logic below to verify the total mass does not exceed the maximum limit of 850000
-
+if (totalMassKg < maximumMassLimit || totalMassKg < 85000) {
+}
 // add logic below to verify the fuel temperature is within the appropriate range of -150 and -300
-
+if (fuelTempCelsius >= -300 && fuelTempCelsius <= -150) {
+}
 // add logic below to verify the fuel level is at 100%
-
+if (fuelLevel === "100%") {
+}
 // add logic below to verify the weather status is clear
 
 // Verify shuttle launch can proceed based on above conditions
