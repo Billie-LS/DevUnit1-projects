@@ -33,5 +33,6 @@ if (fuelTempCelsius >= -300 && fuelTempCelsius <= -150) {
 if (fuelLevel === "100%") {
 }
 // add logic below to verify the weather status is clear
-
+if (weatherStatus === "clear") {
+}
 // Verify shuttle launch can proceed based on above conditions
