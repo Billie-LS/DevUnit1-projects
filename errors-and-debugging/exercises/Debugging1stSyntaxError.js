@@ -24,7 +24,10 @@ switch (true) {
     launchGood = false;
 }
 
+// Define a variable 'launchProper' using a ternary operator
 let launchProper =
-  fuelLevel >= 20000
-    ? (console.log("Fuel level cleared."), true)
-    : (console.log("WARNING: Insufficient fuel!"), false);
+  fuelLevel >= 20000 // Check if fuelLevel is greater than or equal to 20000
+    ? // If condition is true, execute the following:
+      (console.log("Fuel level cleared."), true) // Log message 'Fuel level cleared.' to the console and set 'launchReady' to true
+    : // If condition is false, execute the following:
+      (console.log("WARNING: Insufficient fuel!"), false); // Log warning message to the console and set 'launchReady' to false
