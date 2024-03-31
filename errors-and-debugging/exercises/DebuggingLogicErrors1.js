@@ -24,7 +24,7 @@ let launchGood =
     ? (console.log("Fuel level cleared."), true) // If true, log message 'Fuel level cleared.' and set 'launchReady' to true
     : (console.log("WARNING: Insufficient fuel!"), false); // If false, log warning message and set 'launchReady' to false
 
-// Define 'launchReady' variable
+// Define 'launchProper' variable
 let launchProper;
 
 // Switch statement to check 'fuelLevel'
