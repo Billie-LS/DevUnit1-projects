@@ -26,7 +26,6 @@ let launchGood =
 
 // Define 'launchProper' variable
 let launchProper;
-
 // Switch statement to check 'fuelLevel'
 switch (true) {
   // Case where 'fuelLevel' is greater than or equal to 20000
