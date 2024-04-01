@@ -24,6 +24,21 @@ let launchGood =
     ? (console.log("Fuel level cleared."), true) // If true, log message 'Fuel level cleared.' and set 'launchReady' to true
     : (console.log("WARNING: Insufficient fuel!"), false); // If false, log warning message and set 'launchReady' to false
 
+if (crewStatus && computerStatus === "green") {
+  console.log("Crew & computer cleared.");
+  launchReady = true;
+} else {
+  console.log("WARNING: Crew or computer not ready!");
+  launchReady = false;
+}
+
+if (launchReady) {
+  console.log("10, 9, 8, 7, 6, 5, 4, 3, 2, 1...");
+  console.log("Liftoff!");
+} else {
+  console.log("Launch scrubbed.\n");
+}
+
 // Define 'launchProper' variable
 let launchProper;
 // Switch statement to check 'fuelLevel'
@@ -39,17 +54,9 @@ switch (true) {
   // Default case for when 'fuelLevel' is less than 20000
   default:
     // Log warning message to the console
-    console.log("WARNING: Insufficient fuel!");
+    console.log("\nWARNING: Insufficient fuel!");
     // Set 'launchProper' to false
     launchProper = false;
-}
-
-if (crewStatus && computerStatus === "green") {
-  console.log("Crew & computer cleared.");
-  launchReady = true;
-} else {
-  console.log("WARNING: Crew or computer not ready!");
-  launchReady = false;
 }
 
 // Switch statement to check 'crewStatus && computerStatus'
@@ -58,29 +65,22 @@ switch (true) {
   case crewStatus && computerStatus === "green":
     // Log message 'Fuel level cleared.' to the console
     console.log("Crew & computer cleared.");
-    // Set 'launchReady' to true
-    launchReady = true;
+    // Set 'launchProper' to true
+    launchProper = true;
     // Exit switch statement
     break;
   // Default case for when 'fuelLevel' is less than 20000
   default:
     // Log warning message to the console
     console.log("WARNING: Crew or computer not ready!");
-    // Set 'launchReady' to false
-    launchReady = false;
+    // Set 'launchProper' to false
+    launchProper = false;
 }
 
-if (launchReady) {
-  console.log("10, 9, 8, 7, 6, 5, 4, 3, 2, 1...");
-  console.log("Liftoff!");
-} else {
-  console.log("Launch scrubbed.");
-}
-
-// Switch statement to check 'launchReady'
+// Switch statement to check 'launchProper'
 switch (true) {
-  // Case where 'launchReady' is true
-  case launchReady:
+  // Case where 'launchProper' is true
+  case launchProper:
     // Log message '10, 9, 8, 7, 6, 5, 4, 3, 2, 1...' to the console
     console.log("10, 9, 8, 7, 6, 5, 4, 3, 2, 1...");
     // Log message 'Liftoff!' to the console
