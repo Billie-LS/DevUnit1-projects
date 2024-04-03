@@ -65,6 +65,7 @@ switch (true) {
     break;
   default:
     console.log("Launch scrubbed.");
+    break;
 }
 
 console.log("crewReady = ", crewReady);
