@@ -58,5 +58,14 @@ switch (true) {
     break;
 }
 
+switch (true) {
+  case launchReady && crewReady:
+    console.log("10, 9, 8, 7, 6, 5, 4, 3, 2, 1...");
+    console.log("Liftoff!");
+    break;
+  default:
+    console.log("Launch scrubbed.");
+}
+
 console.log("crewReady = ", crewReady);
 console.log(`crewReady = ${crewReady}`);
