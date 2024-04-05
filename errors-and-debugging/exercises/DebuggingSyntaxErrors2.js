@@ -60,7 +60,7 @@ switch (true) {
     console.log("3, 2, 1...\n");
     // Using Array.from() and join() to log a countdown
     console.log(
-      // Array.from() creates an array of length 10, ranging from 10 to 1
+      // Array.from() create array length 10, ranging 10 to 1
       Array.from({ length: 10 }, (_, i) => 10 - i).join(", ") + "..."
     );
     console.log("Liftoff!");
